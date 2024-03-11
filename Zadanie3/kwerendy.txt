@@ -1,0 +1,7 @@
+1. SELECT * FROM ksiazki ORDER BY tytul;
+2. SELECT * FROM ksiazki WHERE cena = (SELECT MAX(cena) FROM ksiazki);
+3. SELECT * FROM `zamowienia` WHERE status = 'wyslano';
+4. SELECT * FROM `klienci` WHERE nazwisko = 'Rutkowski';
+5. SELECT * FROM `ksiazki` WHERE tytul LIKE '%PHP%';
+6. SELECT * FROM `zamowienia` WHERE data = (SELECT MIN(data) FROM zamowienia);
+7. SELECT * FROM ksiazki WHERE cena = (SELECT MAX(cena) FROM ksiazki);

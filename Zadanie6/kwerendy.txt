@@ -1,0 +1,5 @@
+1. INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`) VALUES (NULL, 'Franciszek', 'Janowski', 'Chorzów');
+2. INSERT INTO `zamowienia` (`idzamowienia`, `idklienta`, `idksiazki`, `data`, `status`) VALUES (NULL, '7', '3', '2024-03-11', 'oczekiwanie');
+3. INSERT INTO `ksiazki` (`idksiazki`, `imieautora`, `nazwiskoautora`, `tytul`, `cena`) VALUES (NULL, '', 'Grębosz', 'Symfonia C++', '');
+4. INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`) VALUES (NULL, 'Adam', 'Mada', 'Choroszcz'), (NULL, 'Gacek', 'Wacek', 'Toruń');
+6. INSERT INTO `klienci` SET `imie` = 'Katarzyna', `nazwisko` = 'Nowak'`miejscowosc` = 'Warszawa';

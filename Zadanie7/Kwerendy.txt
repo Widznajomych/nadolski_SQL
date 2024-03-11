@@ -1,0 +1,10 @@
+2. INSERT INTO `promocje` (`idpromocji`, `idksiazki`, `rodzajpromocji`, `cenawpromocji`) VALUES (NULL, '4', '', ''), (NULL, '4', '', ''), (NULL, '4', '', '');
+3. INSERT INTO `promocje` (`idpromocji`, `idksiazki`, `rodzajpromocji`, `cenawpromocji`) VALUES (NULL, '3', 'świąteczna', '15.99');
+4. ALTER TABLE `promocje` CHANGE `rodzajpromocji` `rodzaj` TEXT NOT NULL;
+   ALTER TABLE `promocje` CHANGE `rodzaj` `rodzajpromocji` TEXT NOT NULL;
+6. ALTER TABLE `promocje` DROP `rodzajpromocji`
+7. ALTER TABLE `promocje` DROP `idpromocji
+9. ALTER TABLE `promocje` ADD `idpromocji` INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`idpromocji`);
+10. UPDATE `promocje` SET `aktualna` = TRUE; 
+11. DROP TABLE `promocje
+12. DELETE FROM zamowienia WHERE `zamowienia`.`idzamowienia` = 1
