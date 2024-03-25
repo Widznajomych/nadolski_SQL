@@ -1,0 +1,25 @@
+ALTER TABLE klienci ADD stanowisko VARCHAR(50);
+ALTER TABLE klienci MODIFY stanowisko VARCHAR(20);
+
+Z2
+INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `miejscowosc`, `stanowisko`) VALUES (NULL, 'Adolf', 'Hitler', 'Buenas Aires', '11');
+INSERT INTO `auta` (`id_auta`, `marka`, `model`, `przebieg`, `rocznik`, `kolor`, `ubezpieczenie`) VALUES (NULL, 'Porshee', '911', '45230', '2015', 'noir', '3200');
+INSERT INTO `ksiazki` (`idksiazki`, `imieautora`, `nazwiskoautora`, `tytul`, `cena`) VALUES (NULL, 'Adolf', 'Hitler', 'Mein Kampf', '69.69');
+INSERT INTO `wypozyczenia` (`id_wyp`, `id_klienta`, `id_auta`, `data_wyp`, `data_zwr`, `naleznosc`) VALUES (NULL, '3', '1', '2009-11-09', '2009-11-10', '430');
+INSERT INTO `zamowienia` (`idzamowienia`, `idklienta`, `idksiazki`, `data`, `status`) VALUES (NULL, '8', '4', '1945-03-07', 'wyslano');
+
+Z3
+
+SELECT imie, nazwisko FROM `klienci` WHERE idklienta = 2
+SELECT * FROM auta WHERE rocznik = 2010;
+SELECT * FROM auta WHERE marka = 'Ford';
+SELECT * from auta where idauta > 1 AND idauta < 5;
+SELECT marka, model FROM auta WHERE ubezpieczenie = (SELECT MAX(ubezpieczenie) FROM auta);
+SELECT auta.idauta, auta.marka, auta.model FROM auta JOIN wypozyczenia ON wypozyczenia.idauta = auta.idauta WHERE wypozyczenia.datawyp = (SELECT MIN(datawyp) FROM wypozyczenia)
+SELECT klienci.imie, klienci.nazwisko FROM klienci JOIN wypozyczenia ON klienci.idklienta = wypozyczenia.idklienta WHERE wypozyczenia.idauta = 1;
+SELECT auta.model, auta.marka FROM auta JOIN wypozyczenia ON auta.idauta = wypozyczenia.idauta WHERE wypozyczenia.idklienta = 3;
+SELECT auta.model, auta.marka FROM auta JOIN wypozyczenia ON auta.idauta = wypozyczenia.idauta JOIN klienci ON wypozyczenia.idklienta = klienci.idklienta WHERE klienci.nazwisko = 'Nowak';
+SELECT model FROM auta WHERE marka = 'f%' AND 'o%' AND 'c%';
+
+Z4
+

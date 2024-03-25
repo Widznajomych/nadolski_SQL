@@ -1,0 +1,10 @@
+SELECT imie, nazwisko from klienci WHERE idklienta = 4;
+SELECT * from auta WHERE rocznik = 2010;
+SELECT * from auta WHERE marka = 'Ford';
+SELECT * from auta where idauta > 1 AND idauta < 5;
+SELECT * from klienci where adres LIKE '%rolna%';
+SELECT marka, model FROM auta WHERE ubezpieczenie = (SELECT MAX(ubezpieczenie) FROM auta);
+SELECT auta.idauta, auta.marka, auta.model FROM auta JOIN wypozyczenia ON wypozyczenia.idauta = auta.idauta WHERE wypozyczenia.datawyp = (SELECT MIN(datawyp) FROM wypozyczenia)
+SELECT klienci.imie, klienci.nazwisko FROM klienci JOIN wypozyczenia ON klienci.idklienta = wypozyczenia.idklienta WHERE wypozyczenia.idauta = 1;
+SELECT auta.model, auta.marka FROM auta JOIN wypozyczenia ON auta.idauta = wypozyczenia.idauta WHERE wypozyczenia.idklienta = 4;
+SELECT auta.model, auta.marka FROM auta JOIN wypozyczenia ON auta.idauta = wypozyczenia.idauta JOIN klienci ON wypozyczenia.idklienta = klienci.idklienta WHERE klienci.nazwisko = 'Pastewniak';

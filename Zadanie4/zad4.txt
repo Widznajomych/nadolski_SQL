@@ -1,0 +1,25 @@
+SELECT imie, nazwisko, idzamowienia, data FROM klienci JOIN zamowienia ON klienci.idklienta = zamowienia.idklienta; 
+
+ 
+
+SELECT kkk.imie, kkk.nazwisko, z.idzamowienia, z.data FROM klienci kkk JOIN zamowienia z ON kkk.idklienta = z.idklienta; 
+
+ 
+
+SELECT imie, nazwisko FROM klienci JOIN zamowienia ON klienci.idklienta = zamowienia.idklienta WHERE idksiazki = 2; 
+
+ 
+
+SELECT tytul FROM ksiazki JOIN zamowienia ON ksiazki.idksiazki = zamowienia.idksiazki WHERE idklienta = 4; 
+
+ 
+
+SELECT tytul FROM ksiazki JOIN zamowienia ON ksiazki.idksiazki = zamowienia.idksiazki JOIN klienci ON klienci.idklienta = zamowienia.idklienta WHERE nazwisko = "grzywocz"; 
+
+ 
+
+SELECT tytul FROM ksiazki JOIN zamowienia ON ksiazki.idksiazki = zamowienia.idksiazki JOIN klienci ON klienci.idklienta = zamowienia.idklienta WHERE nazwisko = "grzywocz" ORDER BY tytul; 
+
+ 
+
+SELECT k.imie, k.nazwisko FROM klienci k LEFT JOIN zamowienia z ON z.idklienta = k.idklienta WHERE z.idklienta IS NULL; 
